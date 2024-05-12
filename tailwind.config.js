@@ -12,7 +12,41 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      height: {
+        88: "22rem",
+      },
     },
+    colors: {
+      primary: {
+        light: "hsla(176,83%,15%,100%)",
+        DEFAULT: "hsla(176,83%,9%,100%)",
+        dark: "#042C2A",
+      },
+      secondary: {
+        light: "#FFD700",
+        DEFAULT: "hsla(177,84%,40%,100%)",
+        dark: "#FFD700",
+      },
+      tertiary: {
+        light: "#FFD700",
+        DEFAULT: "#FFD700",
+        dark: "#FFD700",
+      },
+      white: {
+        light: "#FFD700",
+        DEFAULT: "#FFD700",
+        dark: "#FFD700",
+      },
+      black: {
+        light: "#FFD700",
+        DEFAULT: "#FFD700",
+        dark: "#FFD700",
+      },
+    },
+    fontFamily: {
+      sans: ["Jost", "sans-serif"],
+    },
+    
   },
   plugins: [],
 };
