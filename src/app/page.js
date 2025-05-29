@@ -1,22 +1,36 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex h-screen flex-col items-center bg-primary">
-      <div className="flex flex-col justify-between py-8 px-14 h-72">
-        <h1 className="text-4xl font-light mb-2">Hi, I&apos;m Chris.</h1>
-        <Image src="/pfp.jpg" className="rounded-full mx-auto"
-          width="100" 
-          height="100" 
-          alt="logo" />
-          <p className="mt-2">I&apos;m a full-stack software developer and lifelong student with a passion for tech, music, and self-growth.</p>
+    <div className="flex flex-col items-center h-full w-screen">
+      <div className="flex flex-col justify-between items-center px-14 mb-8 h-60 my-4">
+        <h1 className="md:text-3xl font-light text-center">Hi, I&apos;m Chris.</h1>
+        <Image
+          src="/pfp.jpg"
+          className="rounded-full mx-auto"
+          width="100"
+          height="100"
+          alt="logo"
+        />
+        <p className="text-xs md:text-base mt-2">
+          I&apos;m a full-stack software developer and lifelong student with a
+          passion for tech, music, and self-growth.
+        </p>
+        <Link href="/contact-me">
+          <button
+            href="/contact-me"
+            className=" h-10 w-48 border border-solid rounded border-secondary text-secondary text-lg tracking-widest"
+          >
+            CONTACT ME
+          </button>
+        </Link>
       </div>
-      <button className="h-8 w-52 my-auto border border-solid rounded border-secondary text-secondary">Contact me.</button>
-      <div className="flex flex-col bg-primary-light w-screen h-48 items-center justify-evenly mt-auto ">
-        <a>What I Do</a>
+      <div className="text-2xl flex flex-col bg-primary-light w-screen h-72 items-center justify-evenly ">
+        <a>About Me</a>
         <a>My Resume</a>
         <a>My Projects</a>
       </div>
-    </main>
+    </div>
   );
 }

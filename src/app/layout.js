@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { Jost } from "next/font/google";
+import { NavLinks } from "./ui/nav-links";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,7 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={jost.className}>{children}</body>
+      <body className={`${jost.className} h-screen flex flex-col`}>
+        <NavLinks />
+        <main className="bg-primary h-screen flex-1 overflow-y-auto">
+          {children}
+
+        </main>
+      </body>
     </html>
   );
 }
