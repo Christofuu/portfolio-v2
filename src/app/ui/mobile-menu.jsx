@@ -24,11 +24,12 @@ const variants = {
 }
 
 const links  = [
-    { href: "/", label: "Home" },
-    { href: "/about-me", label: "About Me" },
-    { href: "/", label: "Projects" },
-    { href: "/", label: "Resume" },
-    { href: "/contact-me", label: "Contact" }
+    { href: "#home", label: "Home" },
+    { href: "#about-me", label: "About Me" },
+    { href: "#projects", label: "Projects" },
+    { href: "#resume", label: "Resume" },
+    { href: "contact-me", label: "Contact" },
+    { href: "#blog", label: "Blog" }
 ];
 
 export function Hamburger() {
@@ -54,6 +55,7 @@ export function Hamburger() {
                         <Link
                             key={link.href}
                             href={link.href}
+                            scroll={true}
                             className="md:text-lg text-md text-secondary hover:text-secondary-light hover:underline transition-colors"
                             onClick={() => setIsOpen(false)}
                         >
