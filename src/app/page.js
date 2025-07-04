@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Resume } from "./components/Resume";
+import { Projects } from "./components/Projects";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center h-full w-screen">
-      <div className="flex flex-col  px-14 h-fit min-h-screen mt-4">
+      {/* Uncomment this section if you want to use the original hero section */}
+      {/* <div className="flex flex-col  px-14 h-fit min-h-screen mt-4">
         <h1 className="md:text-3xl text-3xl font-light py-4 ">Hi, I&apos;m Chris.</h1>
         <Image
           src="/bigcodingguy.png"
@@ -25,17 +30,19 @@ export default function Home() {
             CONTACT ME
           </button>
         </Link>
-      </div>
-      <div id="about-me" className="text-2xl flex flex-col bg-primary-light w-screen lg:w-3/5 h-screen items-start px-10 py-6">
+      </div> */}
+      <Hero />
+      <About />
+      {/* <div id="about-me" className="text-2xl flex flex-col bg-primary-light w-screen lg:w-3/5 h-screen items-start px-10">
         <h2 className="py-6 text-sm font-semibold text-start">ABOUT ME</h2>
         <p className="text-base font-light md:text-xl px-2 text-start">
           I&apos;m a San Diego native and a computer science major at San Diego State University. I worked as a full stack web developer for the past two years at Daedastream, a local software consulting firm.
           When I&apos;m not at school or working, you can find me playing guitar, at my MMA gym, or even bombing at the local comedy club&apos;s open mic.
 
         </p>
-      </div>
+      </div> */}
       <br/>
-      <div id="resume" className="text-2xl flex flex-col bg-primary-light w-screen lg:w-3/5 h-fit px-10 py-6 ">
+      {/* <div id="resume" className="text-2xl flex flex-col bg-primary-light w-screen lg:w-3/5 h-fit px-10 py-6 ">
         <h2 className="py-6 text-sm font-semibold text-start">RESUME</h2>
         <div className="bg-primary-lighter rounded shadow-md p-6">
           <h3 className="text-lg font-medium pb-2">Education</h3>
@@ -89,9 +96,10 @@ export default function Home() {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
+      <Resume />
       <br/>
-      <div id="projects" className="text-2xl flex flex-col bg-primary-light w-screen lg:w-3/5 h-fit px-10 py-6">
+      {/* <div id="projects" className="text-2xl flex flex-col bg-primary-light w-screen lg:w-3/5 h-fit px-10 py-6">
         <h2 className="py-2">My Projects</h2>
         <p className="text-base md:text-lg py-2">None of them are that big, but they have great personality.</p>
         <ul className="list-disc px-10 py-4 *:py-2 bg-primary-lighter rounded shadow-md ">
@@ -132,7 +140,8 @@ export default function Home() {
             </ul>
           </li>
         </ul>
-      </div>
+      </div> */}
+      <Projects />
       <br/>
       
     </div>

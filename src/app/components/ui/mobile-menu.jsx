@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useOutsideClick } from '../hooks/useOutsideClick';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { LiaHamburgerSolid } from "react-icons/lia";
 
 const variants = {
