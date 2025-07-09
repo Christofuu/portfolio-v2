@@ -35,7 +35,7 @@ export function About() {
               <p className="text-lg text-gray-300 leading-relaxed">
                 I&apos;m a San Diego native and a computer science major at San
                 Diego State University. I currently work as a full stack
-                software developer for Daedastream, where I&apos;ve been making
+                software developer for <a href="https://www.daedastream.com" target="_blank" alt="A link to the Daedastream website." className="decoration-0 text-secondary-300 font-medium hover:text-secondary-500">Daedastream</a>, where I&apos;ve been making
                 enterprise software for local companies for 3 years.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">

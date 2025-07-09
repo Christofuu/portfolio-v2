@@ -102,7 +102,7 @@ export function Blog() {
 
           <div className="text-center mt-12">
             <a
-              href="#"
+              href="/blog"
               className="inline-flex items-center px-6 py-3 border border-emerald-600 text-emerald-400 rounded-md hover:bg-emerald-600/10 transition-colors duration-200"
             >
               <span>View All Posts</span>

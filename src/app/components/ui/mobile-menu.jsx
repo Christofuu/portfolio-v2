@@ -1,8 +1,48 @@
-import React, { useState } from 'react';
+"use client";
+
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { LiaHamburgerSolid } from "react-icons/lia";
+
+function useActiveSection(sectionIds) {
+    const [activeSection, setActiveSection] = useState('');
+
+    useEffect(() => {
+        const observers = [];
+        
+        const handleIntersection = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -80% 0px', // Trigger when section is 20% into view
+            threshold: 0
+        };
+
+        sectionIds.forEach((sectionId) => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const observer = new IntersectionObserver(handleIntersection, observerOptions);
+                observer.observe(element);
+                observers.push(observer);
+            }
+        });
+
+        return () => {
+            observers.forEach((observer) => observer.disconnect());
+        };
+    }, [sectionIds]);
+
+    return activeSection;
+}
 
 const variants = {
     opened: {
@@ -24,20 +64,44 @@ const variants = {
 }
 
 const links  = [
-    { href: "/", label: "Home" },
-    { href: "#about", label: "About Me" },
-    { href: "#projects", label: "Projects" },
-    { href: "#resume", label: "Resume" },
-    { href: "#contact", label: "Contact" },
-    { href: "#blog", label: "Blog" }
+    { href: "/", label: "Home", sectionId: "home" },
+    { href: "#about", label: "About Me", sectionId: "about" },
+    { href: "#resume", label: "Resume", sectionId: "resume" },
+    { href: "#projects", label: "Projects", sectionId: "projects" },
+    { href: "#contact", label: "Contact", sectionId: "contact" },
+    { href: "blog", label: "Blog", sectionId: "blog" }
 ];
 
 export function Hamburger() {
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState(pathname);
 
     const ref = useOutsideClick(() => {
         setIsOpen(false);
     })
+
+    const sectionIds = links.map(link => link.sectionId);
+    const activeSection = useActiveSection(sectionIds);
+
+    useEffect(() => {
+        if (pathname === '/' && activeSection) {
+            const matchingLink = links.find(link => link.sectionId === activeSection);
+            if (matchingLink) {
+                setActiveLink(matchingLink.href);
+            }
+        }
+    }, [activeSection, pathname]);
+
+    // update useState when link is clicked
+    const handleLinkClick = (href) => {
+        setActiveLink(href);
+    };
+
+    // useEffect to update active link on pathname change
+    useEffect(() => {
+        setActiveLink(pathname);
+    }, [pathname]);
     
     return (
         <>
@@ -56,8 +120,9 @@ export function Hamburger() {
                             key={link.href}
                             href={link.href}
                             scroll={true}
-                            className="md:text-lg text-md text-secondary hover:text-secondary-light hover:underline transition-colors"
+                            className="text-md md:text-lg  text-secondary hover:text-secondary-light hover:underline"
                             onClick={() => setIsOpen(false)}
+                            
                         >
                             {link.label}
                         </Link>
@@ -67,12 +132,13 @@ export function Hamburger() {
                 
             </div>
             <div className="hidden md:flex items-center">
-                <nav className="flex gap-4">
+                <nav className="flex gap-4 ">
                     {links.map((link) => (
                         <Link
+                            onClick={() => handleLinkClick(link.href)}
                             key={link.href}
                             href={link.href}
-                            className="md:text-lg text-md text-secondary hover:text-secondary-light hover:underline transition-colors"
+                            className={`md:text-base text-md tracking-wider font-light text-secondary hover:text-secondary-light hover:underline transition-colors  ${activeLink === link.href ? "text-secondary-light" : ""}`}
                         >
                             {link.label}
                         </Link>
