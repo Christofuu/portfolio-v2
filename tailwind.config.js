@@ -51,31 +51,65 @@ module.exports = {
     },
     colors: {
       primary: {
-        lightest: "hsla(176,90%,25%,100%)",
-        lighter: "hsla(176,83%,20%,100%)",
-        light: "hsla(176,83%,15%,100%)",
-        DEFAULT: "hsla(176,83%,9%,100%)",
-        dark: "#042C2A",
+        100: "#0E958A",
+        lightest: "hsla(176,90%,25%,1)",
+        lighter: "hsla(176,83%,20%,1)",
+        light: "hsla(176,83%,15%,1)",
+        DEFAULT: "hsla(176,83%,9%,1)",
+        500: "#0A7068",
+        dark: "hsla(176,78%,9%,1)",
+        darker: "hsla(176,78%,5%,1)",
+        darkest: "hsla(176,78%,2%,1)",
+        900: "#042A27"
       },
       secondary: {
-        light: "#FFD700",
-        DEFAULT: "hsla(177,84%,40%,100%)",
-        dark: "#FFD700",
+        100: "#69F2EB",
+        light: "hsla(51,100%,50%,1)", // #FFD700
+        300: "#31EDE4",
+        500: "hsla(51,84%,40%,1)", // #10BCB3
+        DEFAULT: "hsla(177,84%,40%,1)",
+        700: "#0B837D",
+        dark: "hsla(51,100%,50%,1)", // #FFD700
+        900: "#074B48"
       },
       tertiary: {
-        light: "#FFD700",
-        DEFAULT: "hsla(177,30%,9%,100%)",
-        dark: "#FFD700",
+        light: "hsla(51,100%,50%,1)", // #FFD700
+        DEFAULT: "hsla(177,30%,9%,1)",
+        dark: "hsla(51,100%,50%,1)", // #FFD700
       },
       white: {
-        light: "#FFD700",
-        DEFAULT: "hsla(177,83%,90%,100%)",
-        dark: "#FFD700",
+        light: "hsla(51,100%,50%,1)", // #FFD700
+        DEFAULT: "hsla(177,83%,90%,1)",
+        dark: "hsla(51,100%,50%,1)", // #FFD700
       },
       black: {
-        light: "#FFD700",
-        DEFAULT: "#FFD700",
-        dark: "#FFD700",
+        light: "hsla(51,100%,50%,1)", // #FFD700
+        DEFAULT: "hsla(51,100%,50%,1)", // #FFD700
+        dark: "hsla(51,100%,50%,1)", // #FFD700
+      },
+      gray: {
+        100: "hsla(220,20%,96%,1)", // #F3F4F6
+        200: "hsla(220,14%,92%,1)", // #E5E7EB
+        300: "hsla(220,13%,87%,1)", // #D1D5DB
+        400: "hsla(220,9%,65%,1)",  // #9CA3AF
+        500: "hsla(186,31%,40%,1)", // #467E86
+        600: "hsla(186,31%,36%,1)", // #3F7278
+        700: "hsla(186,31%,32%,1)", // #38656B
+        800: "hsla(186,31%,23%,1)", // #2A4C50
+        900: "hsla(187,31%,16%,1)",
+        DEFAULT: "#467e86"
+      },
+      alert: {
+        100: "hsla(349, 87%, 68%, 1)", // #FDE8E9
+        500: "hsla(349, 86%, 56%, 1)", // #EE1b42
+        900: "hsla(349, 86%, 36%, 1)", // #AB0D2A
+        DEFAULT: "#EE1B42"
+      },
+      warning: {
+        100: "#FFE75C", 
+        500: "hsla(51, 100%, 50%, 1)", // #FFD700
+        900: "#B89C00", 
+        DEFAULT: "#FFD700"
       },
     },
     fontFamily: {

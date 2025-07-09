@@ -10,9 +10,9 @@ export function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'Personal Portfolio Website (this one!)',
-      description: 'Fully responsive portfolio site written in Next.js with a simple backend for blogging.',
-      technologies: ['Next.js', 'React', 'Node.js', 'MySQL'],
+      title: 'Personal Portfolio Website',
+      description: 'A fully responsive portfolio site (this one)! Written in Next.js with a simple backend for blog posting.',
+      technologies: ['Next.js', 'React', 'Node.js', 'MySQL', 'Tailwind'],
       image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
       liveUrl: '#',
       githubUrl: '#'
@@ -21,7 +21,7 @@ export function Projects() {
       id: 2,
       title: 'Arbitrage Betting Assistant',
       description: 'A real time betting assistant that helps users find arbitrage opportunities across multiple sportsbooks.',
-      technologies: ['Next.js', 'Postgres', 'Supabase', 'Odds API'],
+      technologies: ['Next.js', 'React', 'Postgres', 'Supabase', 'REST API', 'Tailwind'],
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
       liveUrl: '#',
       githubUrl: '#'
@@ -30,7 +30,7 @@ export function Projects() {
       id: 3,
       title: 'Chess Engine with Opponent AI',
       description: 'A fully functional chess engine with a playable AI opponent using a minimax algorithm with alpha-beta pruning.',
-      technologies: ['C++', 'CMake', 'Python' ],
+      technologies: ['C++', 'C', 'CMake', 'Python', 'Algorithms' ],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
       liveUrl: '#',
       githubUrl: '#'
@@ -68,16 +68,16 @@ export function Projects() {
                         </Image>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-medium text-gray-100 mb-3">
+                  <h3 className="text-xl font-medium text-secondary text-gray-100 mb-3">
                     {project.title}
                   </h3>
                   <p className="text-gray-300 mb-4">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-4 ">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-xs"
+                        className="px-3 py-1 border-2 text-gray-100 rounded-full text-xs"
                       >
                         {tech}
                       </span>

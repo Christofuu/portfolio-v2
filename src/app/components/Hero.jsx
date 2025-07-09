@@ -43,7 +43,7 @@ export function Hero() {
           
           <button
             onClick={() => scrollToSection('contact')}
-            className="bg-primary-lighter hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-md transition-colors duration-200 shadow-lg hover:shadow-xl"
+            className="bg-primary-lightest hover:text-warning-500 tracking-wider  text-white font-medium py-3 px-8 rounded-md transition-colors duration-200 shadow-lg hover:shadow-xl"
           >
             CONTACT ME
           </button>

@@ -7,7 +7,7 @@ import { FiLinkedin, FiMail, FiGithub } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
-export default function Contact() {
+export function Contact() {
   const { ref, isIntersecting } = useIntersectionObserver();
 
   const {
@@ -21,7 +21,7 @@ export default function Contact() {
 
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8">
+    <div id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}

@@ -24,11 +24,11 @@ const variants = {
 }
 
 const links  = [
-    { href: "#home", label: "Home" },
-    { href: "#about-me", label: "About Me" },
+    { href: "/", label: "Home" },
+    { href: "#about", label: "About Me" },
     { href: "#projects", label: "Projects" },
     { href: "#resume", label: "Resume" },
-    { href: "contact-me", label: "Contact" },
+    { href: "#contact", label: "Contact" },
     { href: "#blog", label: "Blog" }
 ];
 
