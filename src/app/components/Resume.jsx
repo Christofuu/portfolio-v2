@@ -85,14 +85,43 @@ export function Resume() {
               </div>
             </div>
             
+            {/* TODO: Implement actual download functionality */}
             <div className="mt-12 text-center">
-              <button
-                onClick={handleDownload}
-                className="border-2 border-primary-lightest hover:bg-primary-light text-white hover:text-secondary-light font-medium py-3 px-8 rounded-md transition-colors duration-200 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
-              >
-                
-                Download Full Resume
-              </button>
+              <motion.button
+            onClick={() => scrollToSection("contact")}
+            className={`
+        relative overflow-hidden
+        bg-transparent border-2 border-secondary text-secondary
+        px-8 py-3 rounded-md font-medium tracking-wider
+        transition-all duration-300 ease-out
+        hover:text-white hover:bg-secondary hover:shadow-lg hover:shadow-secondary-300/25
+        
+      `}
+            whileHover={{
+              y: -2,
+              boxShadow: "0 5px 15px rgba(79, 209, 199, 0.4)",
+            }}
+            whileTap={{
+              scale: 0.98,
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {/* Shimmer Effect */}
+            <motion.div
+              className="absolute inset-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              whileHover={{
+                left: "100%",
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+            />
+
+            <span className="relative z-10">DOWNLOAD RESUME</span>
+          </motion.button>
             </div>
           </div>
         </motion.div>

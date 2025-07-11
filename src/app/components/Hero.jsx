@@ -87,7 +87,7 @@ export function Hero() {
               }}
             >
               <Image
-                src="/bigcodingguy.png"
+                src="/bigcodingguy1.png"
                 className="rounded-full mx-auto object-cover"
                 width="350"
                 height="350"
