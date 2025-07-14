@@ -103,15 +103,43 @@ export function Projects() {
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <a
-              href="#"
-              className="inline-flex items-center px-6 py-3 border border-emerald-600 text-emerald-400 rounded-md hover:bg-emerald-600/10 transition-colors duration-200"
-            >
-              <span>View All Projects</span>
-              
-            </a>
-          </div>
+          <div className="mt-12 text-center">
+              <motion.button
+            onClick={() => scrollToSection("contact")}
+            className={`
+        relative overflow-hidden
+        bg-transparent border-2 border-secondary text-secondary-100
+        px-8 py-3 rounded-md font-medium tracking-wider
+        transition-all duration-300 ease-out
+        hover:text-white hover:bg-secondary hover:shadow-lg hover:shadow-secondary-300/25
+        
+      `}
+            whileHover={{
+              y: -2,
+              boxShadow: "0 5px 15px rgba(79, 209, 199, 0.4)",
+            }}
+            whileTap={{
+              scale: 0.98,
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {/* Shimmer Effect */}
+            <motion.div
+              className="absolute inset-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              whileHover={{
+                left: "100%",
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+            />
+
+            <span className="relative z-10">VIEW ALL</span>
+          </motion.button>
+            </div>
         </motion.div>
       </div>
     </section>

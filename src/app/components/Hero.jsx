@@ -1,5 +1,5 @@
 "use client";
-
+import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi';
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import Image from "next/image";
@@ -12,6 +12,13 @@ export function Hero() {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  const socialLinks = [
+    { icon: FiGithub, href: "https://github.com/yourusername", label: "GitHub" },
+    { icon: FiLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+    { icon: FiTwitter, href: "https://twitter.com/yourusername", label: "Twitter" },
+    { icon: FiMail, href: "mailto:your.email@example.com", label: "Email" },
+  ];
 
   return (
     <section
@@ -36,7 +43,7 @@ export function Hero() {
           <div className="relative flex items-center justify-center py-4">
             {/* Rotating Rings */}
             <motion.div
-              className="absolute w-80 h-80 border-2 border-secondary-500/30 rounded-full"
+              className="absolute w-64 h-64 border-2 border-secondary-500/30 rounded-full"
               animate={{ rotate: 360 }}
               transition={{
                 duration: 8,
@@ -46,7 +53,7 @@ export function Hero() {
             />
 
             <motion.div
-              className="absolute w-96 h-96 border-2 border-secondary-300/20 rounded-full"
+              className="absolute w-64 h-64 border-2 border-secondary-300/20 rounded-full"
               animate={{ rotate: -360 }}
               transition={{
                 duration: 12,
@@ -57,7 +64,7 @@ export function Hero() {
 
             {/* Pulsing Shadow */}
             <motion.div
-              className="absolute w-80 h-80 rounded-full"
+              className="absolute w-60 h-60 rounded-full"
               animate={{
                 boxShadow: [
                   "0 0 0 4px rgba(79, 209, 199, 0.3)",
@@ -74,7 +81,7 @@ export function Hero() {
 
             {/* Profile Image */}
             <motion.div
-              className="relative z-10 w-80 h-80 rounded-full overflow-hidden border-2 border-secondary-300/50"
+              className="relative z-10 w-60 h-60 rounded-full overflow-hidden border-2 border-secondary-300/50"
               whileHover={{
                 scale: 1.05,
                 rotate: 5,
@@ -89,17 +96,68 @@ export function Hero() {
               <Image
                 src="/bigcodingguy1.png"
                 className="rounded-full mx-auto object-cover"
-                width="350"
-                height="350"
+                width="250"
+                height="250"
                 alt="logo"
               />
             </motion.div>
+            {/* Social Links Arc */}
+            <div className="absolute h-[250px] inset-0 pointer-events-none">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                // Calculate arc position (right side arc from -60° to 0°)
+                const totalIcons = socialLinks.length;
+                const angleRange = 90; // Total arc span in degrees
+                const startAngle = -50; // Starting angle (higher up)
+                const angle = startAngle + (index * angleRange) / (totalIcons - 1);
+                const radius = 160; // Distance from center
+                
+                // Convert angle to radians and calculate position
+                const radian = (angle * Math.PI) / 180;
+                const x = Math.cos(radian) * radius;
+                const y = Math.sin(radian) * radius;
+
+                return (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute pointer-events-auto w-12 h-12 bg-gray-800/80 backdrop-blur-sm border border-secondary-300/30 rounded-full flex items-center justify-center "
+                    style={{
+                      left: `calc(50% + ${x}px)`,
+                      top: `calc(45% + ${y}px)`,
+                      transform: 'translate(-50%, -50%)',
+                    }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ 
+                      delay: 0.2, 
+                      duration: 0.3,
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 25
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                    
+                      // backgroundColor: "rgba(79, 209, 199, 1)",
+                      borderColor: "rgba(79, 209, 199, 1)",
+                      boxShadow: "0 2px 0px rgba(79, 209, 199, 0.4)",
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Icon className="w-5 h-5 text-secondary-100 group-hover:text-white  duration-300" />
+                  </motion.a>
+                );
+              })}
+            </div>
+        
           </div>
 
           {/* Landing Text */}
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            I&apos;m a full-stack software developer and lifelong student with a
-            passion for tech, music, and self-growth.
+            I&apos;m a San Diego native and a full-stack developer with over four years of experience. 
           </p>
 
           {/* Contact me */}
@@ -107,7 +165,7 @@ export function Hero() {
             onClick={() => scrollToSection("contact")}
             className={`
         relative overflow-hidden
-        bg-transparent border-2 border-secondary text-secondary
+        bg-transparent border-2 border-secondary text-secondary-100
         px-8 py-3 rounded-md font-medium tracking-wider
         transition-all duration-300 ease-out
         hover:text-white hover:bg-secondary hover:shadow-lg hover:shadow-secondary-300/25

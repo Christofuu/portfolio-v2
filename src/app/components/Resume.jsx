@@ -91,7 +91,7 @@ export function Resume() {
             onClick={() => scrollToSection("contact")}
             className={`
         relative overflow-hidden
-        bg-transparent border-2 border-secondary text-secondary
+        bg-transparent border-2 border-secondary text-secondary-100
         px-8 py-3 rounded-md font-medium tracking-wider
         transition-all duration-300 ease-out
         hover:text-white hover:bg-secondary hover:shadow-lg hover:shadow-secondary-300/25
