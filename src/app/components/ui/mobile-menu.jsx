@@ -128,7 +128,7 @@ export function Hamburger() {
               key={link.href}
               href={link.href}
               scroll={true}
-              className="text-md md:text-lg  text-secondary hover:text-secondary-light hover:underline"
+              className="text-md md:text-lg text-primary-900 dark:text-secondary hover:text-secondary-light hover:underline"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
@@ -146,13 +146,13 @@ export function Hamburger() {
               onClick={() => handleLinkClick(link.href)}
               key={link.href}
               href={link.href}
-              className={`md:text-base text-md tracking-wider font-light text-secondary-100 hover:text-warning-500 transition-colors relative ${
+              className={`md:text-base text-md tracking-wider font-light text-primary-900 dark:text-secondary-100 dark:hover:text-warning-500 transition-colors relative ${
                 activeLink === link.href ? "text-warning-500" : ""
               }`}
             >
               {link.label}
               <motion.div
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-secondary-light"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-500 dark:bg-secondary-light"
                 initial={{ scaleX: 0 }}
                 animate={{ 
                   scaleX: activeLink === link.href ? 1 : 0 

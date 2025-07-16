@@ -10,9 +10,9 @@ export function NavLinks() {
   const [isOpen, setIsOpen] = useState(false);
  
   return (
-    <div className="bg-primary-lightest/60 backdrop-filter backdrop-blur-md text-primary-lightest h-16 flex flex-row items-center justify-between px-4">
-      <Link className={`link ${pathname === '/' ? 'active' : ''} text-gray-300/90 tracking-widest text-lg`} href="/">
-        chrismdove.com
+    <div className="dark:bg-primary-lightest/60 bg-gray-300 dark:text-primary-lightest h-16 flex flex-row items-center justify-between px-4">
+      <Link className={`link ${pathname === '/' ? 'active' : ''} dark:text-gray-300/90 text-primary-light tracking-widest text-xl pl-6`} href="/">
+        Chris Dove
       </Link>
       <Hamburger />
     </div>
