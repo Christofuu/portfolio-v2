@@ -139,15 +139,15 @@ export function Hamburger() {
           </text>
         </motion.nav>
       </div>
-      <div className="hidden md:flex items-center">
+      <div className="hidden md:flex items-center ">
         <nav className="flex gap-4 ">
           {links.map((link) => (
             <Link
               onClick={() => handleLinkClick(link.href)}
               key={link.href}
               href={link.href}
-              className={`md:text-base text-md tracking-wider font-light text-primary-900 dark:text-secondary-100 dark:hover:text-warning-500 transition-colors relative ${
-                activeLink === link.href ? "text-warning-500" : ""
+              className={`md:text-base text-md tracking-wider font-light text-gray-300 dark:text-secondary-100 dark:hover:text-warning-500 transition-colors relative ${
+                activeLink === link.href ? "!dark:text-gray-800" : ""
               }`}
             >
               {link.label}

@@ -3,6 +3,8 @@ import { FiGithub, FiLinkedin, FiMail, FiYoutube } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import Image from "next/image";
+import { FaArrowTurnDown } from "react-icons/fa6";
+import { IoMdPin } from "react-icons/io";
 import FloatingShapes from "./ui/FloatingShapes";
 
 export function Hero() {
@@ -41,124 +43,89 @@ export function Hero() {
       initial={{ opacity: 0, y: 32 }}
       animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="min-h-screen flex items-start pt-12 md:pt-40 justify-center px-4 sm:px-6 lg:px-8"
+      className="min-h-screen flex flex-col w-full justify-between px-4 sm:px-6 lg:px-8"
     >
       <FloatingShapes />
 
-      <div className="max-w-6xl min-w-fit mx-auto text-center flex flex-col md:flex-row-reverse md:gap-x-48 gap-12 ">
-        <div className="max-w-2xl  h-full ">
-          <h1 className="!md:text-8xl text-6xl font-light pb-12 text-left md:text-6xl dark:text-gray-200 text-primary-900">
-            Hi. I&apos;m Chris.
-          </h1>{" "}
-          <p className="text-lg tracking-wider  text-left md:text-xl dark:text-gray-300 text-primary-900 mb-8 max-w-2xl mx-auto leading-relaxed">
-            I&apos;m a San Diego native and a full-stack developer with over
-            four years of web and mobile app development. Outside of tech I love
-            making music, jiu jitsu, and spending time outdoors. Take a look
-            around, or reach out using my links here.
-          </p>
-          {/* Contact me */}
-          <motion.button
-            onClick={() => scrollToSection("contact")}
-            className={`
-        relative overflow-hidden
-        bg-transparent border-2 dark:border-secondary dark:text-secondary-100
-        px-8 py-3 rounded-md font-medium tracking-wider
-        transition-all duration-300 ease-out
-        dark:hover:text-white dark:hover:bg-secondary hover:shadow-lg dark:hover:shadow-secondary-300/25
-        text-secondary-200 hover:bg-secondary-700 bg-secondary-900 hover:text-white
-        
-      `}
-            whileHover={{
-              y: -2,
-              boxShadow: "0 5px 15px rgba(79, 209, 199, 0.4)",
-            }}
-            whileTap={{
-              scale: 0.98,
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            {/* Shimmer Effect */}
-            <motion.div
-              className="absolute inset-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              whileHover={{
-                left: "100%",
-              }}
-              transition={{
-                duration: 0.5,
-                ease: "easeInOut",
-              }}
-            />
+      <div className="w-full px-16 flex flex-col h-4/5 justify-between">
+        {/* Top Section */}
+        <div className="w-full flex items-start justify-start pt-20">
+          <div className="flex-col">
+            <h1 className="text-6xl font-light pb-6 text-left md:text-6xl dark:text-gray-200 text-primary-900">
+              Christopher Dove
+            </h1>
+            <p className="text-lg tracking-wider text-left md:text-3xl dark:text-gray-300 text-primary-900 mb-8 max-w-2xl leading-relaxed">
+              <IoMdPin className="inline-block mr-2" />
+              San Diego, CA
+            </p>
+            <div className="flex items-start">
+              <motion.button
+                onClick={() => scrollToSection("contact")}
+                className={`
+                  relative overflow-hidden 
+                  bg-transparent border-2 dark:border-secondary dark:text-secondary-100
+                  px-8 py-3 rounded-md font-medium tracking-wider
+                  transition-all duration-300 ease-out
+                  dark:hover:text-white dark:hover:bg-secondary hover:shadow-lg dark:hover:shadow-secondary-300/25
+                  text-secondary-200 hover:bg-secondary-700 bg-gray-900 hover:text-white
+                `}
+                whileHover={{
+                  y: -2,
+                  boxShadow: "0 5px 15px rgba(79, 209, 199, 0.4)",
+                }}
+                whileTap={{
+                  scale: 0.98,
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                {/* Shimmer Effect */}
+                <motion.div
+                  className="absolute inset-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  whileHover={{
+                    left: "100%",
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                  }}
+                />
 
-            <span className="relative z-10">CONTACT ME</span>
-          </motion.button>
-        </div>
-        <div className="space-y-8">
-          {/* Rasterized Art Circle */}
-          <div className="relative flex items-center justify-center py-4 ">
-            {/* Rotating Rings */}
-            <motion.div
-              className="absolute w-80 h-80 border-2 border-secondary-500/30 rounded-full"
-              animate={{ rotate: 360 }}
-              transition={{
-                duration: 8,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-            />
-
-            <motion.div
-              className="absolute w-80 h-80 border-2 border-secondary-300/20 rounded-full"
-              animate={{ rotate: -360 }}
-              transition={{
-                duration: 12,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-            />
-
-            {/* Pulsing Shadow */}
-            <motion.div
-              className="absolute w-80 h-80 rounded-full"
-              animate={{
-                boxShadow: [
-                  "0 0 0 4px rgba(79, 209, 199, 0.3)",
-                  "0 0 0 20px rgba(79, 209, 199, 0.1)",
-                  "0 0 0 4px rgba(79, 209, 199, 0.3)",
-                ],
-              }}
-              transition={{
-                duration: 4,
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
-            />
-
-            {/* Profile Image */}
-            <motion.div
-              className="relative z-10 w-80 h-80 rounded-full overflow-hidden border-2 border-secondary-300/50"
-              whileHover={{
-                scale: 1.05,
-                rotate: 5,
-                boxShadow: "0 0 0 8px rgba(79, 209, 199, 0.5)",
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-              }}
-            >
-              <Image
-                src="/bigcodingguy1.png"
-                className="rounded-full mx-auto object-cover"
-                width={320}
-                height={320}
-                alt="logo"
-              />
-            </motion.div>
+                <span className="relative z-10">Let&apos;s Talk</span>
+              </motion.button>
+            </div>
           </div>
         </div>
+
+        {/* Bottom Section */}
+        <div className="w-full flex flex-col items-end pb-8">
+          <h2 className="md:text-6xl text-right text-5xl font-light tracking-wider dark:text-gray-300 text-primary-900 mb-8 leading-relaxed">
+            Full-Stack Developer
+          </h2>
+          
+          {/* Social Links */}
+          <div className="flex items-center justify-center gap-8 mb-8">
+            {socialLinks.map(({ icon: Icon, href, label }) => (
+              <motion.a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-900 hover:text-secondary-700 dark:text-gray-300 dark:hover:text-secondary-700 transition-colors duration-300"
+                whileHover={{ scale: 1.1 }}
+              >
+                <Icon className="w-8 h-8" />
+              </motion.a>
+            ))}
+          </div>
+          
+          {/* Separator line */}
+        </div>
+          <span className="flex items-center justify-center w-full h-2">
+            <p className="text-gray-500 dark:text-gray-400">see more..</p>
+           <FaArrowTurnDown className="text-gray-500 dark:text-gray-400 mt-4 animate-bounce" size={24} />
+            </span>
       </div>
     </motion.section>
   );
