@@ -26,19 +26,19 @@ export function About() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-center mb-16 text-gray-100">
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-16 dark:text-gray-200 text-primary-900">
             About Me
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg dark:text-gray-200 text-primary-900 leading-relaxed">
                 I&apos;m a San Diego native and a computer science major at San
                 Diego State University. I currently work as a full stack
-                software developer for <a href="https://www.daedastream.com" target="_blank" alt="A link to the Daedastream website." className="decoration-0 text-secondary-300 font-medium hover:text-secondary-500">Daedastream</a>, where I&apos;ve been making
-                enterprise software for local companies for 3 years.
+                software developer for <a href="https://www.daedastream.com" target="_blank" alt="A link to the Daedastream website." className="decoration-0 dark:text-secondary-300 text-[#2A80FF] font-medium hover:text-secondary-500">Daedastream</a>, where I&apos;ve been making
+                enterprise software for local companies for over three years.
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg dark:text-gray-200 text-primary-900 leading-relaxed">
                 When I&apos;m not at school or working, you can find me playing
                 guitar, at my MMA gym, or even bombing at the local comedy
                 club&apos;s open mic.
@@ -48,7 +48,7 @@ export function About() {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="skill-tag px-4 py-2 rounded-full border-2 border-e-secondary-light border-t-secondary-light text-sm"
+                    className="skill-tag px-4 py-2 rounded-full border-2 dark:border-e-secondary-light dark:border-t-secondary-light border-e-primary-100 border-gray-600 border-t-primary-100 text-primary-500 text-sm tracking-wide"
                   >
                     {skill}
                   </span>

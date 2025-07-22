@@ -88,6 +88,10 @@ module.exports = {
         DEFAULT: "hsla(51,100%,50%,1)", // #FFD700
         dark: "hsla(51,100%,50%,1)", // #FFD700
       },
+      tan: {
+        DEFAULT: "#EEEBDA",
+        alt: "#F0EFE8",
+      },
       gray: {
         100: "hsla(220,20%,96%,1)", // #F3F4F6
         200: "hsla(220,14%,92%,1)", // #E5E7EB
@@ -115,6 +119,10 @@ module.exports = {
     },
     fontFamily: {
       sans: ["Jost", "sans-serif"],
+      bebas: ["var(--font-bebas-neue)"],
+      nunito: ["var(--font-nunito)"],
+      inter: ["Inter", "sans-serif"],
+      jost: ["Jost", "sans-serif"],
     },
     
   },

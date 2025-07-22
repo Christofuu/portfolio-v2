@@ -16,9 +16,9 @@ const ThemeSwitcher = () => {
       <button
         onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
         type="button"
-        className="flex h-10 w-10 p-2 items-center justify-center rounded-md border border-gray-800 text-gray-800 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:border-slate-300 dark:text-white"
+        className="flex h-10 w-10 p-2 items-center justify-center rounded-md border-2 border-secondary-900 bg-secondary-900 dark:border-secondary-500 text-gray-800 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:border-slate-300 dark:text-white"
       >
-        <CiDark className="dark:hidden" size={25} />
+        <CiDark className="dark:hidden text-gray-100 " size={25} />
         <MdOutlineLightMode className="hidden dark:block" size={25} />
       </button>
     </div>

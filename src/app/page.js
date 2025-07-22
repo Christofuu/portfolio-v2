@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "./components/Hero";
@@ -7,6 +8,7 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Blog } from "./components/Blog";
 import { Footer } from "./components/Footer";
+import FloatingShapes from "./components/ui/FloatingShapes";
 
 export default function Home() {
   return (
@@ -34,6 +36,7 @@ export default function Home() {
           </button>
         </Link>
       </div> */}
+      <FloatingShapes />
       <Hero />
       <About />
       {/* <div id="about-me" className="text-2xl flex flex-col bg-primary-light w-screen lg:w-3/5 h-screen items-start px-10">

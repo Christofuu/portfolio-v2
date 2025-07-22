@@ -55,15 +55,15 @@ export function Blog() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-center mb-16 text-gray-100">
-            Latest Blog Posts
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-16 dark:text-gray-200 text-primary-900">
+            Blog Posts (WIP)
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <motion.article
                 key={post.id}
-                className="bg-emerald-600/10 backdrop-blur-sm rounded-xl border border-emerald-600/20 overflow-hidden hover:border-emerald-600/40 transition-all duration-300"
+                className="bg-primary-500/60 backdrop-blur-sm rounded-xl border border-emerald-600/20 overflow-hidden hover:border-emerald-600/40 transition-all duration-300"
                 whileHover={{ scale: 1.02, y: -4 }}
                 transition={{ duration: 0.3 }}
               >
@@ -77,21 +77,21 @@ export function Blog() {
 
                 <div className="p-6">
                   <div className="flex items-center space-x-2 mb-3">
-                    <span className="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-xs">
+                    <span className="px-3 py-1 dark:text-gray-200 text-primary-900  rounded-full text-xs">
                       {post.category}
                     </span>
-                    <span className="text-gray-400 text-sm">•</span>
-                    <span className="text-gray-400 text-sm">{post.date}</span>
+                    <span className="dark:text-gray-200 text-primary-900 text-sm">•</span>
+                    <span className="dark:text-gray-200 text-primary-900 text-sm">{post.date}</span>
                   </div>
 
-                  <h3 className="text-xl font-medium text-gray-100 mb-3">
+                  <h3 className="text-xl font-medium dark:text-gray-200 text-primary-900 mb-3">
                     {post.title}
                   </h3>
-                  <p className="text-gray-300 mb-4">{post.excerpt}</p>
+                  <p className="dark:text-gray-200 text-primary-900 mb-4">{post.excerpt}</p>
 
                   <a
                     href={post.readUrl}
-                    className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium"
+                    className="dark:text-gray-200 text-primary-900 hover:text-emerald-300 transition-colors text-sm font-medium"
                   >
                     Read More
                   </a>
@@ -100,15 +100,43 @@ export function Blog() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <a
-              href="/blog"
-              className="inline-flex items-center px-6 py-3 border border-emerald-600 text-emerald-400 rounded-md hover:bg-emerald-600/10 transition-colors duration-200"
-            >
-              <span>View All Posts</span>
-              {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
-            </a>
-          </div>
+          <div className="mt-12 text-center">
+              <motion.button
+            
+            className={`
+        relative overflow-hidden
+        bg-transparent border-2 border-secondary dark:text-secondary-100 text-primary-900 
+        px-8 py-3 rounded-md font-medium tracking-wider
+        transition-all duration-300 ease-out
+        hover:text-white hover:bg-secondary hover:shadow-lg hover:shadow-secondary-300/25
+        
+      `}
+            whileHover={{
+              y: -2,
+              boxShadow: "0 5px 15px rgba(79, 209, 199, 0.4)",
+            }}
+            whileTap={{
+              scale: 0.98,
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {/* Shimmer Effect */}
+            <motion.div
+              className="absolute inset-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              whileHover={{
+                left: "100%",
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+            />
+
+            <span className="relative z-10"><a href="/blog">VIEW ALL</a></span>
+          </motion.button>
+            </div>
         </motion.div>
       </div>
     </section>

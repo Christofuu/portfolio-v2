@@ -50,35 +50,35 @@ export function Resume() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="space-y-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-center mb-16 text-gray-100">
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-16 dark:text-gray-300 text-primary-900 ">
             Resume
           </h2>
           
           <div className="bg-emerald-600/10 backdrop-blur-sm rounded-xl border border-primary-lightest p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-medium text-gray-100 mb-6">Experience</h3>
+                <h3 className="text-2xl font-medium dark:text-gray-300 text-gray-500  mb-6">Experience</h3>
                 
                 <div className="space-y-6">
                   {experiences.map((exp, index) => (
                     <div key={index} className="border-l-2 border-secondary pl-4">
                       <h4 className="text-lg font-medium text-secondary">{exp.title}</h4>
-                      <p className="text-gray-300 text-sm">{exp.company} • {exp.period}</p>
-                      <p className="text-gray-300 mt-2">{exp.description}</p>
+                      <p className="dark:text-gray-300 text-primary-900  text-sm">{exp.company} • {exp.period}</p>
+                      <p className="dark:text-gray-300 text-primary-900  mt-2">{exp.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
               
               <div>
-                <h3 className="text-2xl font-medium text-gray-100 mb-6">Education</h3>
+                <h3 className="text-2xl font-medium ark:text-gray-300 text-gray-500 dark:text-gray-300 mb-6">Education</h3>
                 
                 <div className="space-y-6">
                   {education.map((edu, index) => (
                     <div key={index} className="border-l-2 border-secondary pl-4">
                       <h4 className="text-lg font-medium text-secondary">{edu.degree}</h4>
-                      <p className="text-gray-300 text-sm">{edu.institution} • {edu.period}</p>
-                      <p className="text-gray-300 mt-2">{edu.description}</p>
+                      <p className="dark:text-gray-300 text-primary-900 0 text-sm">{edu.institution} • {edu.period}</p>
+                      <p className="dark:text-gray-300 text-primary-900  mt-2">{edu.description}</p>
                     </div>
                   ))}
                 </div>
@@ -91,7 +91,7 @@ export function Resume() {
             onClick={() => scrollToSection("contact")}
             className={`
         relative overflow-hidden
-        bg-transparent border-2 border-secondary text-secondary-100
+        bg-transparent border-2 border-secondary dark:text-secondary-100 text-primary-900 
         px-8 py-3 rounded-md font-medium tracking-wider
         transition-all duration-300 ease-out
         hover:text-white hover:bg-secondary hover:shadow-lg hover:shadow-secondary-300/25

@@ -1,12 +1,71 @@
+
 import { Inter } from "next/font/google";
 import { Jost } from "next/font/google";
 import { NavLinks } from "./components/ui/nav-links";
 import "./globals.css";
 import ThemeProvider from "./utils/ThemeProvider";
 import ThemeSwitcher from "./components/ThemeSwitcher";
+import localFont from "next/font/local";
 
 const inter = Inter({ subsets: ["latin"] });
 const jost = Jost({ subsets: ["latin"] });
+
+
+const bebasNeue = localFont({
+  src: './fonts/BebasNeue-Regular.ttf',
+  display: 'swap',
+  variable: '--font-bebas-neue', // Recommended: Use CSS variables
+});
+
+// Define the local font for Nunito
+const nunito = localFont({
+  src: [
+    {
+      path: './fonts/Nunito-ExtraLight.ttf',
+      weight: '200',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Nunito-Light.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Nunito-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Nunito-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Nunito-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Nunito-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Nunito-ExtraBold.ttf',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Nunito-Black.ttf',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-nunito',
+});
+
+
 
 export const metadata = {
   title: "Create Next App",
@@ -15,12 +74,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={` ${bebasNeue.variable} ${nunito.variable} ${inter.className} ${jost.className}`}>
+      <head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      </head>
       <body className={`${jost.className} h-screen flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavLinks />
           <ThemeSwitcher />
-          <main className="dark:bg-primary-900 bg-gray-300 h-screen flex-1 overflow-y-auto">
+          <main className="dark:bg-primary-900 bg-tan-alt h-screen flex-1 overflow-y-auto">
             {children}
           </main>
         </ThemeProvider>

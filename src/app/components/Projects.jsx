@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 // import { ArrowRight, Github, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
+import { CiLink } from "react-icons/ci";
 
 export function Projects() {
   const { ref, isIntersecting } = useIntersectionObserver();
@@ -14,7 +15,7 @@ export function Projects() {
       description: 'A fully responsive portfolio site (this one)! Written in Next.js with a simple backend for blog posting.',
       technologies: ['Next.js', 'React', 'Node.js', 'MySQL', 'Tailwind'],
       image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
-      liveUrl: '#',
+      liveUrl: 'http://localhost:3000',
       githubUrl: '#'
     },
     {
@@ -28,7 +29,7 @@ export function Projects() {
     },
     {
       id: 3,
-      title: 'Chess Engine with Opponent AI',
+      title: 'Chess Engine',
       description: 'A fully functional chess engine with a playable AI opponent using a minimax algorithm with alpha-beta pruning.',
       technologies: ['C++', 'C', 'CMake', 'Python', 'Algorithms' ],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
@@ -47,7 +48,7 @@ export function Projects() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="space-y-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-center mb-16 text-gray-100">
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-16 dark:text-gray-300 text-primary-900 ">
             Featured Projects
           </h2>
           
@@ -68,16 +69,20 @@ export function Projects() {
                         </Image>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-medium text-secondary text-gray-100 mb-3">
+                  <h3 className="text-xl min-w-full inline-flex items-center justify-between font-medium text-secondary-700 mb-3">
                     {project.title}
+                    <a href={project.liveUrl} target="_blank">
+
+                      <CiLink size={25}/>
+                    </a>
                   </h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
+                  <p className="dark:text-gray-300 text-primary-900  mb-4">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-4 ">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 border-2 text-gray-100 rounded-full text-xs"
+                        className="px-3 py-1 border-2 dark:text-gray-300 text-primary-900 border-primary-100 rounded-full text-xs"
                       >
                         {tech}
                       </span>
@@ -87,13 +92,13 @@ export function Projects() {
                   <div className="flex justify-between items-center">
                     <a
                       href={project.liveUrl}
-                      className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium flex items-center gap-1"
+                      className="dark:text-gray-300 text-primary-900 hover:text-emerald-300 transition-colors text-sm font-medium flex items-center gap-1"
                     >
                       View Project 
                     </a>
                     <a
                       href={project.githubUrl}
-                      className="text-gray-400 hover:text-gray-300 transition-colors"
+                      className="dark:text-gray-300 text-primary-900  hover:text-gray-300 transition-colors"
                     >
                       
                     </a>
@@ -108,7 +113,7 @@ export function Projects() {
             onClick={() => scrollToSection("contact")}
             className={`
         relative overflow-hidden
-        bg-transparent border-2 border-secondary text-secondary-100
+        bg-transparent drop-shadow-lg border-2 border-secondary dark:text-secondary-100 text-primary-900 
         px-8 py-3 rounded-md font-medium tracking-wider
         transition-all duration-300 ease-out
         hover:text-white hover:bg-secondary hover:shadow-lg hover:shadow-secondary-300/25
