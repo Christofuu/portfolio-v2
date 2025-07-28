@@ -54,31 +54,31 @@ export function Resume() {
             Resume
           </h2>
           
-          <div className="bg-emerald-600/10 backdrop-blur-sm rounded-xl border border-primary-lightest p-8">
+          <div className="bg-primary-500/20 backdrop-blur-sm rounded-xl border border-primary-lightest p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-medium dark:text-gray-300 text-gray-500  mb-6">Experience</h3>
+                <h3 className="text-2xl font-medium dark:text-gray-300 text-gray-900  mb-6">Experience</h3>
                 
                 <div className="space-y-6">
                   {experiences.map((exp, index) => (
                     <div key={index} className="border-l-2 border-secondary pl-4">
-                      <h4 className="text-lg font-medium text-secondary">{exp.title}</h4>
-                      <p className="dark:text-gray-300 text-primary-900  text-sm">{exp.company} • {exp.period}</p>
-                      <p className="dark:text-gray-300 text-primary-900  mt-2">{exp.description}</p>
+                      <h4 className="text-2xl font-medium  dark:text-secondary text-secondary-700">{exp.title}</h4>
+                      <p className="dark:text-gray-300 text-primary-900  text-md">{exp.company} • {exp.period}</p>
+                      <p className="dark:text-gray-300 text-primary-900  mt-2 font-semibold tracking-wide">{exp.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
               
               <div>
-                <h3 className="text-2xl font-medium ark:text-gray-300 text-gray-500 dark:text-gray-300 mb-6">Education</h3>
+                <h3 className="text-2xl font-medium ark:text-gray-300 text-gray-900 dark:text-gray-300 mb-6">Education</h3>
                 
                 <div className="space-y-6">
                   {education.map((edu, index) => (
                     <div key={index} className="border-l-2 border-secondary pl-4">
-                      <h4 className="text-lg font-medium text-secondary">{edu.degree}</h4>
-                      <p className="dark:text-gray-300 text-primary-900 0 text-sm">{edu.institution} • {edu.period}</p>
-                      <p className="dark:text-gray-300 text-primary-900  mt-2">{edu.description}</p>
+                      <h4 className="text-2xl font-medium  dark:text-secondary text-secondary-700">{edu.degree}</h4>
+                      <p className="dark:text-gray-300 text-primary-900  text-md">{edu.institution} • {edu.period}</p>
+                      <p className="dark:text-gray-300 text-primary-900  mt-2 font-semibold tracking-wide">{edu.description}</p>
                     </div>
                   ))}
                 </div>

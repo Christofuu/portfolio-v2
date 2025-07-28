@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavLinks />
           <ThemeSwitcher />
-          <main className="dark:bg-primary-900 bg-tan-alt h-screen flex-1 overflow-y-auto">
+          <main className="dark:bg-primary-900 bg-[#BAE1DE] h-screen flex-1 overflow-y-auto">
             {children}
           </main>
         </ThemeProvider>

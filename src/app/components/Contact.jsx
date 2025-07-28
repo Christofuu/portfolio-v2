@@ -38,8 +38,8 @@ export function Contact() {
       <div className="grid md:grid-cols-2 gap-12">
         <div className="space-y-6">
           <div>
-            <h3 className="text-xl font-medium dark:text-gray-200 text-primary-900 mb-4">
-              Let&apos;s Connect
+            <h3 className="text-2xl font-medium dark:text-gray-200 text-primary-900 mb-4">
+              Let&apos;s Connect.
             </h3>
             <p className="dark:text-gray-200 text-primary-900 leading-relaxed">
               Have any inquiries, comments, death threats, and/or confessions of
@@ -49,26 +49,26 @@ export function Contact() {
           </div>
 
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-emerald-600/20 flex items-center justify-center">
+            <a href="mailto:cdovedev@gmail.com" target="_blank" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-primary-500/20 rounded-full flex items-center justify-center">
                 <FiMail className="h-5 w-5 text-primary-500" />
               </div>
               <span className="dark:text-gray-200 text-primary-900">cdovedev@gmail.com</span>
-            </div>
+            </a>
 
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-emerald-600/20 rounded-full flex items-center justify-center">
+            <a href="https://www.linkedin.com/in/chrismdev" target="_blank" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-primary-500/20 rounded-full flex items-center justify-center">
                 <FiLinkedin className="h-5 w-5 text-primary-500" />
               </div>
               <span className="dark:text-gray-200 text-primary-900">/in/chrismdev</span>
-            </div>
+            </a>
 
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-emerald-600/20 rounded-full flex items-center justify-center">
+            <a href="https://github.com/christofuu" target="_blank" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-primary-500/20 rounded-full flex items-center justify-center">
                 <FiGithub className="h-5 w-5 text-primary-500" />
               </div>
               <span className="dark:text-gray-200 text-primary-900">/christofuu</span>
-            </div>
+            </a>
           </div>
         </div>
         <div className="bg-primary-500/10 rounded-xl border border-primary-100/20  p-6">

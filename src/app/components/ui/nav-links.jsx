@@ -12,7 +12,7 @@ export function NavLinks() {
   return (
     <div className="dark:bg-primary bg-gray-900 dark:text-primary-lightest h-16 flex flex-row items-center justify-between px-4">
       <Link className={`link ${pathname === '/' ? 'active' : ''} font-bebas dark:text-gray-300/90 text-gray-300 tracking-widest text-xl pl-6`} href="/">
-        chrismdove.com
+        cmdove.com
       </Link>
       <Hamburger />
     </div>

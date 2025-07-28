@@ -11,7 +11,13 @@ export function About() {
     "TypeScript",
     "Python",
     "PostgreSQL",
-    "AWS",
+    "Express.js",
+    "Next.js",
+    "Docker",
+    "MySQL",
+    "MongoDB",
+    "Java",
+    "C++"
   ];
 
   return (
@@ -32,13 +38,13 @@ export function About() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <p className="text-lg dark:text-gray-200 text-primary-900 leading-relaxed">
+              <p className="text-xl dark:text-gray-200 text-primary-900 leading-relaxed">
                 I&apos;m a San Diego native and a computer science major at San
                 Diego State University. I currently work as a full stack
                 software developer for <a href="https://www.daedastream.com" target="_blank" alt="A link to the Daedastream website." className="decoration-0 dark:text-secondary-300 text-[#2A80FF] font-medium hover:text-secondary-500">Daedastream</a>, where I&apos;ve been making
                 enterprise software for local companies for over three years.
               </p>
-              <p className="text-lg dark:text-gray-200 text-primary-900 leading-relaxed">
+              <p className="text-xl dark:text-gray-200 text-primary-900 leading-relaxed">
                 When I&apos;m not at school or working, you can find me playing
                 guitar, at my MMA gym, or even bombing at the local comedy
                 club&apos;s open mic.
@@ -48,7 +54,7 @@ export function About() {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="skill-tag px-4 py-2 rounded-full border-2 dark:border-e-secondary-light dark:border-t-secondary-light border-e-primary-100 border-gray-600 border-t-primary-100 text-primary-500 text-sm tracking-wide"
+                    className="skill-tag px-4 py-2 rounded-full border-2 dark:border-e-secondary-light dark:border-t-secondary-light border-e-primary-100 border-gray-600 border-t-primary-100 dark:text-tan text-primary-900 font-semibold text-base tracking-wider"
                   >
                     {skill}
                   </span>
@@ -57,13 +63,13 @@ export function About() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-emerald-600/20 border border-emerald-600/30 flex items-center justify-center backdrop-blur-sm">
+              <div className="aspect-square rounded-2xl bg-primary-500/20  flex items-center justify-center backdrop-blur-sm">
                 <div className="text-center text-emerald-400">
                   <Image
-                    src="/julian_pic.jpeg"
+                    src="/pfp.jpg"
                     alt="Chris MDove"
-                    width={800}
-                    height={800}
+                    width={500}
+                    height={500}
                     className=" mx-auto shadow-lg rounded-2xl"
                   />
 

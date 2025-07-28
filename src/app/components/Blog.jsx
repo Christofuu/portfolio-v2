@@ -134,7 +134,7 @@ export function Blog() {
               }}
             />
 
-            <span className="relative z-10"><a href="/blog">VIEW ALL</a></span>
+            <span className="relative z-10"><a href="/blog">VIEW ALL (WIP)</a></span>
           </motion.button>
             </div>
         </motion.div>

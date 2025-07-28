@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { FaArrowTurnDown } from "react-icons/fa6";
 import { LuChevronsDown } from "react-icons/lu";
+import Image from "next/image";
 
 import { IoMdPin } from "react-icons/io";
 
@@ -50,11 +51,11 @@ export function Hero() {
       {/* TOP CONTENT BLOCK */}
       <div className="w-full">
         {/* Responsive font size: smaller on mobile, larger on desktop. */}
-        <h1 className="text-4xl font-bebas text-left sm:text-5xl lg:text-6xl dark:text-gray-200 text-primary-900 pb-6">
+        <h1 className="text-4xl font-bebas text-left sm:text-5xl lg:text-6xl dark:text-gray-200 text-primary-900 mb-0 leading-normal">
           Christopher Dove
         </h1>
         {/* Responsive font size and adjusted margin for smaller screens. */}
-        <p className="text-lg tracking-wider text-left md:text-2xl dark:text-gray-300 text-primary-900 mb-8 max-w-2xl leading-relaxed">
+        <p className="text-lg tracking-wider text-left md:text-2xl dark:text-gray-300 text-primary-900 mb-4 max-w-2xl leading-relaxed">
           <IoMdPin className="inline-block mr-2" />
           San Diego, CA
         </p>
@@ -62,12 +63,11 @@ export function Hero() {
           <motion.button
             onClick={() => scrollToSection("contact")}
             className={`
-              relative overflow-hidden 
-              bg-gray-900 border-2 dark:border-secondary dark:text-secondary-100 text-secondary-200
-              hover:text-white dark:hover:text-white dark:hover:bg-secondary hover:bg-secondary-700
-              px-8 py-3 rounded-md font-medium tracking-wider
-              transition-all duration-300 ease-out
-              hover:shadow-lg dark:hover:shadow-secondary-300/25
+              relative overflow-hidden
+        bg-transparent border-2 border-secondary dark:text-secondary-100 text-primary-900 
+        px-8 py-3 rounded-md font-medium tracking-wider
+        transition-all duration-300 ease-out
+        hover:text-white hover:bg-secondary hover:shadow-lg hover:shadow-secondary-300/25
             `}
             whileHover={{
               y: -2,
@@ -84,16 +84,35 @@ export function Hero() {
               whileHover={{ left: "100%" }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             />
-            <span className="relative z-10">Let&apos;s Talk</span>
+            <span className="relative z-10">LET&apos;S TALK</span>
           </motion.button>
         </div>
       </div>
 
+      {/* PROFILE IMAGE */}
+      <div className="flex justify-center mt-8 mb-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isIntersecting ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="overflow-hidden shadow-lg w-52 h-52 md:w-80 md:h-80 rounded-full md:border-8 border-gray-600  md:p-8"
+        >
+          <Image
+            src="/bigcodingguy1.png"
+            alt="Profile Picture"
+            width={400}
+            height={400}
+            className="w-full h-full object-cover"
+            priority
+          />
+        </motion.div>
+      </div>
+
       {/* BOTTOM CONTENT BLOCK */}
       <div className="w-full flex flex-col items-center">
-        <div className="w-full flex flex-col items-start md:items-end">
+        <div className="w-full flex flex-col items-end">
           {/* Responsive font size and text alignment. Left-aligned on mobile, right-aligned on desktop. */}
-          <h2 className="text-4xl font-bebas text-left sm:text-5xl lg:text-6xl md:text-right font-light tracking-wider dark:text-gray-300 text-primary-900 mb-8 leading-relaxed">
+          <h2 className="text-4xl font-bebas text-left sm:text-5xl lg:text-6xl md:text-right font-light tracking-wider dark:text-gray-300 text-primary-900 mb-2 leading-relaxed">
             Full-Stack Developer
           </h2>
 
